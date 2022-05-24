@@ -1,20 +1,34 @@
+#TERRAFORM COMMANDS 
+terraform init
+    |     destroy
+    |     plan
+    |     apply
+    |     plan -out changes.terraform
+    V     apply changes.terraform
+rm changes.terraform
+
+#EXAMPLES
+
 #provider.tf
 provider "aws" {
   access_key = "${var.AWS_ACCESS_KEY}"
   secret_key = "${var.AWS_SECRET_KEY}"
   region = "${var.AWS_REGION}"
 }
+
 #instance.tf
 resource "aws_instance" "example" {
   ami = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
 }
+
 #vars.tf
 variable "AWS_ACCESS_KEY" {}
 variable "AWS_SECRET_KEY" {}
 variable "AWS_REGION" {
   default = "eu-west-1"
 }
+
 variable "AMIS" {
   type = "map"
   default = {
