@@ -1,0 +1,17 @@
+#Git Commands https://www.edureka.co/blog/git-commands-with-example/
+
+#Git config sets the author name and email address respectively to be used with your commits.
+git config –global user.name “[name]”
+git config –global user.email “[email address]”
+
+#Git init is used to start a new repository.
+git init [repository name]
+
+#Git clone is used to obtain a repository from an existing URL.
+git clone [url]
+
+#Git add adds a file to the staging area.
+#Git add * adds one or more to the staging area.
+git add [file]
+
+
